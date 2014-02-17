@@ -1,0 +1,8 @@
+/Debug
+/ipch
+/Release
+/src/*.aps
+/*.opensdf
+/*.sdf
+/*.suo
+/*.user
