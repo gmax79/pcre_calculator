@@ -13,67 +13,6 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Russian (Russia) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
-LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
-#pragma code_page(1251)
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Dialog
-//
-
-IDD_ABOUTBOX_RU DIALOGEX 0, 0, 203, 71
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "О программе"
-FONT 8, "MS Shell Dlg", 400, 0, 0x1
-BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,146,50,50,14
-    CTEXT           "Калькулятор для выражений\nPerl Compatible Regular Expressions (PCRE)",IDC_STATIC,7,7,185,17
-    LTEXT           "https://github.com/gmax79/pcre_calculator",IDC_STATIC_LINK,27,27,143,10
-END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// DESIGNINFO
-//
-
-#ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
-BEGIN
-    IDD_ABOUTBOX_RU, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 196
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 64
-    END
-END
-#endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Menu
-//
-
-IDR_MENU_RU MENU
-BEGIN
-    POPUP "&Язык"
-    BEGIN
-        MENUITEM "Английский",                  ID_LANGUAGE_ENGLISH
-        MENUITEM "Русский",                     ID_LANGUAGE_RUSSIAN, CHECKED
-    END
-    MENUITEM "&?",                          ID_ABOUT
-END
-
-#endif    // Russian (Russia) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
 // English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
@@ -85,27 +24,21 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 // Dialog
 //
 
-IDD_ABOUTBOX DIALOGEX 0, 0, 203, 71
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "About"
-FONT 8, "MS Shell Dlg", 0, 0, 0x0
-BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,146,50,50,14
-    CTEXT           "Calculator for\nPerl Compatible Regular Expressions (PCRE) ",IDC_STATIC,7,7,189,17
-    LTEXT           "https://github.com/gmax79/pcre_calculator",IDC_STATIC_LINK,27,27,143,10
-END
-
-IDD_MAINDLG DIALOGEX 0, 0, 321, 199
+IDD_MAINDLG DIALOGEX 0, 0, 321, 225
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
-CAPTION "PCRE Calculator v1.0"
+CAPTION "PCRE Calculator v1.1"
 FONT 8, "MS Shell Dlg", 0, 0, 0x0
 BEGIN
     EDITTEXT        IDC_EDIT_REGEXP,7,16,307,32,ES_MULTILINE | ES_AUTOHSCROLL
     EDITTEXT        IDC_EDIT_STRING,7,64,307,32,ES_MULTILINE | ES_AUTOHSCROLL
-    LTEXT           "Regular Expression:",IDC_STATIC_REGEXP,9,7,299,8
-    LTEXT           "Test String:",IDC_STATIC_STRING,9,54,299,9
-    LTEXT           "Result:",IDC_STATIC_RESULT,9,105,299,8
-    EDITTEXT        IDC_EDIT_RESULT,7,114,307,77,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | NOT WS_TABSTOP
+    CONTROL         "SimpleSearch",IDC_RADIO_FIND,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,22,109,65,12
+    CONTROL         "MultiSearch",IDC_RADIO_FINDALL,"Button",BS_AUTORADIOBUTTON,102,109,65,12
+    EDITTEXT        IDC_EDIT_RESULT,7,141,307,77,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+    LTEXT           "github page",IDC_STATIC_LINK,274,7,40,9
+    LTEXT           "Regular Expression:",IDC_STATIC_REGEXP,9,7,71,8
+    LTEXT           "Test String:",IDC_STATIC_STRING,9,55,71,8
+    LTEXT           "Result:",IDC_STATIC_RESULT,9,132,71,8
+    GROUPBOX        "Mode",IDC_STATIC,7,98,307,30
 END
 
 
@@ -117,39 +50,15 @@ END
 #ifdef APSTUDIO_INVOKED
 GUIDELINES DESIGNINFO
 BEGIN
-    IDD_ABOUTBOX, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 196
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 64
-    END
-
     IDD_MAINDLG, DIALOG
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 314
         TOPMARGIN, 7
-        BOTTOMMARGIN, 192
+        BOTTOMMARGIN, 218
     END
 END
 #endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Menu
-//
-
-IDR_MENU_EN MENU
-BEGIN
-    POPUP "&Language"
-    BEGIN
-        MENUITEM "English",                     ID_LANGUAGE_ENGLISH, CHECKED
-        MENUITEM "Russian",                     ID_LANGUAGE_RUSSIAN
-    END
-    MENUITEM "&?",                          ID_ABOUT
-END
 
 
 #ifdef APSTUDIO_INVOKED

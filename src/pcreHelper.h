@@ -12,7 +12,7 @@ public:
     ~Pcre16();
     bool setRegExp(const std::wstring& regexp, bool extra = false);
     void find(const std::wstring& string);           // find first match + additional data(params indexes)
-    void findAllMatches(const std::wstring& string); // find all matcher
+    void findAllMatches(const std::wstring& string); // find all matches
     int  getSize() const;
     int  getFirst(int index) const;
     int  getLast(int index) const;
