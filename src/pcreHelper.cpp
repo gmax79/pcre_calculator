@@ -106,7 +106,10 @@ void Pcre16::getString(int index, std::wstring* str) const
     assert(index>=0 && index<getSize());
     int b = m_indexes[index*2];
     int e = m_indexes[index*2+1];
-    str->assign(m_str.substr(b, e-b));
+    if (b >= 0 && e > 0)
+      str->assign(m_str.substr(b, e-b));
+    else
+      str->clear();
 }
 
 void Pcre16::clear()
